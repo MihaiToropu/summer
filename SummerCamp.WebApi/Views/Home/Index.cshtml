@@ -1,0 +1,33 @@
+﻿<div class="jumbotron">
+    <p>Summer camp Web API</p>
+</div>
+
+<ul>
+    <li><span>GET /api/categories</span></li>
+    <li><span>GET /api/announcements</span></li>
+    <li><span>GET /api/announcements/{id}</span></li>
+    <li>
+        <span>POST /api/announcements/NewAnnouncement</span>
+        <ul>
+            <li>CategoryId (*)</li>
+            <li>Title (*)</li>
+            <li>Phonenumber (*)</li>
+            <li>Email (*)</li>
+            <li>Description</li>
+        </ul>
+    </li>
+    <li>
+        <span>POST /api/announcements/CloseAnnouncement?announcementId={id}</span>
+        <ul>
+            <li>Email (*)</li>
+        </ul>
+    </li>
+    <li>
+        <span>POST /api/announcements/ExtendAnnouncement?announcementId={id}</span>
+        <ul>
+            <li>Email (*)</li>
+        </ul>
+    </li>
+</ul>
+<br />
+<span>* = Required</span>
