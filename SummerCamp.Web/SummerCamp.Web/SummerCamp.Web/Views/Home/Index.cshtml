@@ -43,6 +43,9 @@
     </style>
 </head>
 
+<body>
+    <a href="@Url.Action("Create", "Home")">Add new announcement</a>
+</body>
 
 <h2>My Customers</h2>
 
@@ -86,9 +89,13 @@
                 @item.Id
             </td>
             <td>
+                <a onclick="return confirm('Are you sure?')" href="@Url.Action("Delete", "Home", new { id = item.Id})">Delete</a>
+                | Edit
+            </td>
+            <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Details", "Details", new { id = item.Id, Title = item.Title, Description = item.Description }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id, email = item.Email })
             </td>
         </tr>
     }
