@@ -165,18 +165,53 @@ namespace SummerCamp.Web.Controllers
                     ViewBag.Result = "Succesfully saved!";
                     ModelState.Clear();
 
-                    return View(new AnnouncementNewReview());
+                    return RedirectToAction("GetReview");
                 }
                 else
                 {
                     ViewBag.Result = "Error!Please try again with valid data";
                 }
+
             }
             return View(nou);
+
         }
 
 
+        public async Task<ActionResult> GetReview(int id)
+        {
+            List<AnnouncementNewReview> AnnouncementInfo = new List<AnnouncementNewReview>();
+            string Baseurl = "http://api.summercamp.stage02.netromsoftware.ro/";
+            using (var client = new HttpClient())
+            {
+                //Passing service base url  
+                client.BaseAddress = new Uri(Baseurl);
 
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //Sending request to find web api REST service resource GetAllAnnouncements using HttpClient  
+                HttpResponseMessage Res = await client.GetAsync("/api/reviews/GetByAnnouncementId?announcementId=" + id);
+
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api   
+                    var AnnouncementResp = Res.Content.ReadAsStringAsync().Result;
+
+                    //Deserializing the response recieved from web api and storing into the Announcement list  
+                    AnnouncementInfo = JsonConvert.DeserializeObject<List<AnnouncementNewReview>>(AnnouncementResp);
+
+                }
+
+                //AnnouncementInfo.Id = id;
+                //AnnouncementInfo.Title = Title;
+                //AnnouncementInfo.Description = Description;
+                //returning the Announcement list to view  
+                return View(AnnouncementInfo);
+            }
+
+        }
 
         //public async Task<ActionResult> Edit(int id)
         //{
