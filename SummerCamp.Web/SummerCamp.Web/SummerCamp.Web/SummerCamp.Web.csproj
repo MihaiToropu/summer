@@ -164,7 +164,8 @@
     <Compile Include="Models\AnnouncementClient.cs" />
     <Compile Include="Models\AnnouncementCreate.cs" />
     <Compile Include="Models\AnnouncementDetails.cs" />
-    <Compile Include="Models\AnnouncementDelete.cs" />
+    <Compile Include="Models\AnnouncementClose.cs" />
+    <Compile Include="Models\AnnouncementNewReview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -216,7 +217,8 @@
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\Close.cshtml" />
+    <Content Include="Views\Home\Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

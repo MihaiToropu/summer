@@ -5,10 +5,8 @@ using System.Web;
 
 namespace SummerCamp.Web.Models
 {
-    public class AnnouncementDelete
+    public class AnnouncementClose
     {
         public string Email { get; set; }
-        public int Id { get; set; }
-
     }
 }

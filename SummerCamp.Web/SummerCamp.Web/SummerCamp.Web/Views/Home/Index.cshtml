@@ -65,7 +65,7 @@
         </th>
 
         <th colspan="2">
-            Id
+         
         </th>
 
 
@@ -84,18 +84,10 @@
             <td>
                 @item.Closed
             </td>
-
-            <td>
-                @item.Id
-            </td>
-            <td>
-                <a onclick="return confirm('Are you sure?')" href="@Url.Action("Delete", "Home", new { id = item.Id})">Delete</a>
-                | Edit
-            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id, Title = item.Title, Description = item.Description }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id, email = item.Email })
+                @Html.ActionLink("Close", "Close", new { id = item.Id, email = item.Email })
             </td>
         </tr>
     }
@@ -124,5 +116,4 @@
         }
     }
 </script>
-
 

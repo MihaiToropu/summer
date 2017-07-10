@@ -16,12 +16,9 @@ namespace SummerCamp.Web.Models
         public string Description { get; set; }
 
         public string CategoryName { get; set; }
+
         public string Email { get; set; }
 
-        internal bool DeleteAnnouncement(int id)
-        {
-            throw new NotImplementedException();
-        }
 
     }
 }

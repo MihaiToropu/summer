@@ -1,34 +1,98 @@
 ﻿@model SummerCamp.Web.Models.AnnouncementDetails
 
 @{
-    ViewBag.Title = "Details";
+    Layout = null;
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
 
-<div>
-    <h4>AnnouncementDetails</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>AnnouncementDetails</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Closed)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Closed)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CategoryName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Phonenumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Phonenumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CategoryId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExpirationDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExpirationDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PostDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PostDate)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

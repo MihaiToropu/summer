@@ -13,7 +13,7 @@ namespace SummerCamp.Web.Models
     {
         private string BASE_URL = "http://api.summercamp.stage02.netromsoftware.ro";
 
-        public IEnumerable<Announcement> findAll()
+        public IEnumerable<AnnouncementDetails> findAll()
         {
             try
             {
@@ -23,7 +23,7 @@ namespace SummerCamp.Web.Models
                     new MediaTypeWithQualityHeaderValue("aplication/json"));
                 HttpResponseMessage response = client.GetAsync("api/announcements").Result;
                 if (response.IsSuccessStatusCode)
-                    return response.Content.ReadAsAsync<IEnumerable<Announcement>>().Result;
+                    return response.Content.ReadAsAsync<IEnumerable<AnnouncementDetails>>().Result;
                 return null;
             }
             catch
@@ -33,7 +33,7 @@ namespace SummerCamp.Web.Models
         }
 
 
-        public bool Edit(Announcement announcement)
+        public bool Edit(AnnouncementDetails announcement)
         {
             try
             {

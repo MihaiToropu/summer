@@ -19,25 +19,25 @@
         <div class="form-group">
             @Html.LabelFor(a => a.CategoryId)
             @Html.TextBoxFor(a => a.CategoryId, new { @class = "form-control" })
-            @Html.ValidationMessageFor(a => a.CategoryId)
+            @Html.ValidationMessageFor(a => a.CategoryId, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(a => a.Title)
             @Html.TextBoxFor(a => a.Title, new { @class = "form-control" })
-            @Html.ValidationMessageFor(a => a.Title)
+            @Html.ValidationMessageFor(a => a.Title, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(a => a.Phonenumber)
             @Html.TextBoxFor(a => a.Phonenumber, new { @class = "form-control" })
-            @Html.ValidationMessageFor(a => a.Phonenumber)
+            @Html.ValidationMessageFor(a => a.Phonenumber, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(a => a.Email)
             @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(a => a.Email)
+            @Html.ValidationMessageFor(a => a.Email, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
